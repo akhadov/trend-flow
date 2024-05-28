@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TrendFlow.DataAccess.Repositories.Contracts;
+using TrendFlow.Domain.Products;
 
-namespace TrendFlow.DataAccess.Repositories.Implementations
+namespace TrendFlow.DataAccess.Repositories.Implementations;
+
+public class DiscussionRepository(ApplicationDbContext context) : Repository<Discussion>(context), IDiscussionRepository
 {
-    internal class DiscussionRepository
-    {
-    }
 }

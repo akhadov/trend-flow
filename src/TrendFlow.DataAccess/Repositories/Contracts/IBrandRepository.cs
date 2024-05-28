@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TrendFlow.Domain.Brands;
 
-namespace TrendFlow.DataAccess.Repositories.Contracts
+namespace TrendFlow.DataAccess.Repositories.Contracts;
+
+public interface IBrandRepository : IRepository<Brand>
 {
-    internal interface IBrandRepository
-    {
-    }
 }

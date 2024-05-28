@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TrendFlow.Domain.Products;
 
-namespace TrendFlow.DataAccess.Repositories.Contracts
+namespace TrendFlow.DataAccess.Repositories.Contracts;
+
+public interface IReviewRepository : IRepository<Review>
 {
-    internal interface IReviewRepository
-    {
-    }
 }

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TrendFlow.DataAccess.Repositories.Contracts;
+using TrendFlow.Domain.Categories;
 
-namespace TrendFlow.DataAccess.Repositories.Implementations
+namespace TrendFlow.DataAccess.Repositories.Implementations;
+
+public class CategoryRepository(ApplicationDbContext context) : Repository<Category>(context), ICategoryRepository
 {
-    internal class CategoryRepository
-    {
-    }
 }
