@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TrendFlow.DataAccess.Data;
 using TrendFlow.Domain.Common;
 
 namespace TrendFlow.DataAccess.Repositories;
