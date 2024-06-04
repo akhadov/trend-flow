@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TrendFlow.Domain.Brands;
-using TrendFlow.Domain.Categories;
-using TrendFlow.Domain.Products;
-using TrendFlow.Domain.Users;
 
 namespace TrendFlow.DataAccess.Data;
 
