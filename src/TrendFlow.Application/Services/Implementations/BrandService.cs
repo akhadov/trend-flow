@@ -50,7 +50,7 @@ public class BrandService : IBrandService
         return Result<BrandResponse>.Success(brandResponse);
     }
 
-    public async Task<Result> UpdateAsync(long id, CreateBrandRequest request)
+    public async Task<Result> UpdateAsync(long id, UpdateBrandRequest request)
     {
         Guard.Against.Null(request, nameof(request));
 

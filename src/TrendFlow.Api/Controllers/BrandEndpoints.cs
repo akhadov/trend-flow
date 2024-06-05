@@ -17,5 +17,45 @@ public static class BrandEndpoints
                 onSuccess: response => Results.Ok(response),
                 onFailure: error => Results.BadRequest(error));
         });
+
+        route.MapGet("api/brands", async (IBrandService brandService) =>
+        {
+            var result = await brandService.GetAllAsync();
+
+            return result.Match(
+                onSuccess: response => Results.Ok(response),
+                onFailure: error => Results.BadRequest(error)
+            );
+        });
+
+        route.MapGet("api/brands/{id:long}", async (long id, IBrandService brandService) =>
+        {
+            var result = await brandService.GetByIdAsync(id);
+
+            return result.Match(
+                onSuccess: response => Results.Ok(response),
+                onFailure: error => Results.BadRequest(error)
+            );
+        });
+
+        route.MapPut("api/brands/{id:long}", async (long id, UpdateBrandRequest request, IBrandService brandService) =>
+        {
+            var result = await brandService.UpdateAsync(id, request);
+
+            return result.Match(
+                onSuccess: () => Results.NoContent(),
+                onFailure: error => Results.BadRequest(error)
+            );
+        });
+
+        route.MapDelete("api/brands/{id:long}", async (long id, IBrandService brandService) =>
+        {
+            var result = await brandService.DeleteAsync(id);
+
+            return result.Match(
+                onSuccess: () => Results.NoContent(),
+                onFailure: error => Results.BadRequest(error)
+            );
+        });
     }
 }
