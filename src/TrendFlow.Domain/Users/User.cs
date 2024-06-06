@@ -12,9 +12,10 @@ public class User : BaseAuditableEntity
     public string PasswordSalt { get; set; } = string.Empty;
     public string ImagePath { get; set; } = string.Empty;
     public bool IsMale { get; set; }
+    public UserRole Role { get; set; }
 
     // Parameterized constructor
-    public User(string firstName, string lastName, string username, string email, string password, string passwordSalt, string imagePath, bool isMale)
+    public User(string firstName, string lastName, string username, string email, string password, string passwordSalt, string imagePath, bool isMale, UserRole role)
     {
         FirstName = firstName;
         LastName = lastName;
@@ -24,6 +25,7 @@ public class User : BaseAuditableEntity
         PasswordSalt = passwordSalt;
         ImagePath = imagePath;
         IsMale = isMale;
+        Role = role;
     }
 
     // Private parameterless constructor

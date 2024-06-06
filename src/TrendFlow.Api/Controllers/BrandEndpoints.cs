@@ -1,7 +1,6 @@
 ﻿using TrendFlow.Api.Extensions;
 using TrendFlow.Application.Models.Brands;
 using TrendFlow.Application.Services.Contracts;
-using TrendFlow.Application.Services.Implementations;
 
 namespace TrendFlow.Api.Controllers;
 
