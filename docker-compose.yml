@@ -1,0 +1,40 @@
+version: '3.4'
+
+services:
+  trendflow.api:
+    image: ${DOCKER_REGISTRY-}trendflowapi
+    container_name: TrendFlow.Api
+    build:
+      context: .
+      dockerfile: src/Web.Api/Dockerfile
+    ports:
+      - 5000:5000
+      - 5001:5001
+
+  trendflow-db:
+    image: postgres:latest
+    container_name: TrendFlow.Db
+    environment:
+      - POSTGRES_DB=trend-flow
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+      
+  trendflow-seq:
+    image: datalust/seq:latest
+    container_name: TrendFlow.Seq
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5341:5341
+      - 8081:80
+
+  trendflow-redis:
+    image: redis:latest
+    container_name: TrendFlow.Redis
+    restart: always
+    ports:
+      - '6379:6379'
